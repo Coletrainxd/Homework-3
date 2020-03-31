@@ -3,15 +3,12 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
+  newPassword = "";
   length = prompt(
     "Select the length you would like your password to be (between 8 and 128 characters)",
     ""
   );
-  if (
-    parseInt(length) < 8 ||
-    parseInt(length) > 128
-    //Number.isInteger(length) === true /couldnt get this to work for some reason :(
-  ) {
+  if (parseInt(length) < 8 || parseInt(length) > 128 || isNaN(length) == true) {
     alert(
       "The number you entered is either too long, too short or included characters other than numbers. Please select a number between 8 and 128."
     );
